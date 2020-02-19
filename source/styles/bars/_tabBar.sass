@@ -1,0 +1,109 @@
+.tabBar
+  +size(200px, 100vh)
+  +positionStickyWithOffset(0, 0, auto, auto)
+  +shadowTabBar
+  +display-flex
+  +flex-direction(column)
+  +flex-shrink(0)
+  z-index: 10
+  background-color: $colorBackgroundPrimary
+  
+  .header
+    +size(100%, 62px)
+    +display-flex
+    +align-items(center)
+    +justify-content(center)
+    +shadowSeparator
+    .logo
+      +iconTabBarLogo
+
+  .navigationItems
+    +size(100%, auto)
+    +contentEdgeInsets(12px, 12px, 12px, 12px)
+    +noUserSelect
+    +cursorDefault
+    box-sizing: border-box
+    
+    .item
+      +size(100%, 40px)
+      +display-flex
+      +flex-direction(row)
+      +align-items(center)
+      +contentEdgeInsets(8px, 8px, 8px, 8px)
+      +offset(0, 0, 0, 4px)
+      +clipToBounds
+      +cornerRadius(7px)
+      +cursorAction
+      +interactionTransition
+      box-sizing: border-box
+      background-color: $colorClear
+      
+      .icon
+        +size(24px, 24px)
+
+      .title
+        +offset(6px, 0, 0, 0)
+        +fontFootnoteEmphasized
+        color: $colorAction
+        opacity: 0.8
+
+      &:hover
+        background-color: $colorActionTranslucent
+
+      &:active
+        +interactionTapScale
+
+      &.selected
+        background-color: $colorTint
+        .title
+          color: $colorTitleSecondary
+          opacity: 1
+
+      &.overview
+        .icon
+          +iconTabBarOverview
+        &.selected
+          .icon
+            +iconTabBarOverviewSelected
+
+      &.conversations
+        .icon
+          +iconTabBarConversations
+        &.selected
+          .icon
+            +iconTabBarConversationsSelected
+
+      &.workflow
+        .icon
+          +iconTabBarWorkflow
+        &.selected
+          .icon
+            +iconTabBarWorkflowSelected
+
+      &.clients
+        .icon
+          +iconTabBarClients
+        &.selected
+          .icon
+            +iconTabBarClientsSelected
+
+      &.patients
+        .icon
+          +iconTabBarPatients
+        &.selected
+          .icon
+            +iconTabBarPatientsSelected
+
+      &.services
+        .icon
+          +iconTabBarServices
+        &.selected
+          .icon
+            +iconTabBarServicesSelected
+
+      &.settings
+        .icon
+          +iconTabBarSettings
+        &.selected
+          .icon
+            +iconTabBarSettingsSelected

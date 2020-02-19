@@ -1,0 +1,181 @@
+=size($width, $height)
+  width: $width
+  height: $height
+
+=offset($left, $top, $right, $bottom)
+  margin: $top $right $bottom $left
+
+=positionAbsoluteWithOffset($offsetLeft, $offsetTop, $offsetRight, $offsetBottom)
+  position: absolute
+  top: $offsetTop
+  bottom: $offsetBottom
+  left: $offsetLeft
+  right: $offsetRight
+
+=positionFixedWithOffset($offsetLeft, $offsetTop, $offsetRight, $offsetBottom)
+  position: fixed
+  top: $offsetTop
+  bottom: $offsetBottom
+  left: $offsetLeft
+  right: $offsetRight
+
+=positionStickyWithOffset($offsetLeft, $offsetTop, $offsetRight, $offsetBottom)
+  position: sticky
+  top: $offsetTop
+  bottom: $offsetBottom
+  left: $offsetLeft
+  right: $offsetRight
+
+=contentEdgeInsets($insetLeft, $insetTop, $insetRight, $insetBottom)
+  padding: $insetTop $insetRight $insetBottom $insetLeft
+
+=offset($offsetLeft, $offsetTop, $offsetRight, $offsetBottom)
+  margin: $offsetTop $offsetRight $offsetBottom $offsetLeft
+
+=clipToBounds
+  overflow: hidden
+
+=clipToBoundsFalse
+  overflow: visible
+
+=display-flex
+  display: -webkit-flex
+  display: -ms-flexbox
+  display: flex
+
+=flex($value)
+  -webkit-flex: $value
+  -ms-flex: $value
+  flex: $value
+
+=justify-content($value)
+  -webkit-justify-content: $value
+  -ms-justify-content: $value
+  justify-content: $value
+
+=align-content($value)
+  -webkit-align-content: $value
+  -ms-align-content: $value
+  align-content: $value
+
+=align-self($value)
+  -webkit-align-self: $value
+  -ms-align-self: $value
+  align-self: $value
+
+=justify-self($value)
+  -webkit-justify-self: $value
+  -ms-justify-self: $value
+  justify-self: $value
+
+=flex-direction($value)
+  -webkit-flex-direction: $value
+  -ms-flex-direction: $value
+  flex-direction: $value
+
+=flex-flow($value)
+  -webkit-flex-flow: $value
+  -ms-flex-flow: $value
+  flex-flow: $value
+
+=flex-basis($value)
+  -webkit-flex-basis: $value
+  -ms-flex-basis: $value
+  flex-basis: $value
+
+=flex-wrap($value)
+  -webkit-flex-wrap: $value
+  -ms-flex-wrap: $value
+  flex-wrap: $value
+
+=flex-grow($value)
+  -webkit-flex-grow: $value
+  -ms-flex-grow: $value
+  flex-grow: $value
+
+=align-items($value)
+  -webkit-align-items: $value
+  -ms-align-items: $value
+  align-items: $value
+
+=flex-shrink($value)
+  -webkit-flex-shrink: $value
+  -ms-flex-shrink: $value
+  flex-shrink: $value
+
+=transform($value)
+  -webkit-transform: $value
+  -moz-transform: $value
+  -ms-transform: $value
+  -o-transform: $value
+  transform: $value
+
+@mixin keyframes($animationName)
+  @-webkit-keyframes #{$animationName}
+    @content
+  @-moz-keyframes #{$animationName}
+    @content
+  @-ms-keyframes #{$animationName}
+    @content
+  @-o-keyframes #{$animationName}
+    @content
+  @keyframes #{$animationName}
+    @content
+
+=animation($value)
+  -webkit-animation: $value
+  -moz-animation: $value
+  -ms-animation: $value
+  -o-animation: $value
+  animation: $value
+
+=noUserSelect
+  -webkit-touch-callout: none
+  -webkit-user-select: none
+  -khtml-user-select: none
+  -moz-user-select: none
+  -ms-user-select: none
+  user-select: none
+
+=userSelect
+  -webkit-touch-callout: auto
+  -webkit-user-select: auto
+  -khtml-user-select: auto
+  -moz-user-select: auto
+  -ms-user-select: auto
+  user-select: auto
+
+=appereance($value)
+  -webkit-appearance: $p
+  -moz-appearance: $p
+  -o-appearance: $p
+  appearance: $p
+
+=clipToBounds
+  overflow: hidden
+
+=clipToBoundsFalse
+  overflow: visible
+
+=cornerRadius($value)
+  -webkit-border-radius: $value
+  -moz-border-radius: $value
+  border-radius: $value
+
+=cursorDefault
+  cursor: default
+
+=cursorAction
+  cursor: pointer
+
+=cursorTextInput
+  cursor: text
+
+=cursorText
+  cursor: text
+
+=horizontalScrolling
+  overflow-x: auto
+  -webkit-overflow-scrolling: touch
+  &::-webkit-scrollbar
+    display: none

@@ -1,0 +1,29 @@
+=interactionTransition
+  transition: all .28s cubic-bezier(0.42, 0.800, 0.58, 1.2), background-color .32s ease-in-out, color .32s ease-in-out, opacity .32s ease-in-out
+
+=interactionNone
+  transform: scale(1)
+  opacity: 1
+
+=interactionTapScale
+  transform: scale(0.94)
+
+=interactionHoverScale
+  transform: scale(1.04)
+
+=interactionTableViewCell
+  +interactionTransition
+  &:hover
+    +shadowCellElevated
+    transform: scale(1.01)
+  &:active
+    +shadowCell
+    background-color: $colorBackgroundSecondary
+    transform: scale(0.98)
+
+=interactionTableViewCellSubtle
+  +interactionTransition
+  &:hover
+    transform: scale(1.01)
+  &:active
+    transform: scale(0.98)

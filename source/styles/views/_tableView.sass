@@ -1,0 +1,38 @@
+.tableView
+  .tableSection
+    +display-flex
+    +flex-direction(column)
+
+    .header
+      +size(100%, auto)
+      +offset(0, 16px, 0, 6px)
+      +fontCaption1Emphasized
+      +noUserSelect
+      +cursorDefault
+      color: $colorSubtitle
+
+    .cell
+      +size(100%, 40px)
+      +contentEdgeInsets(12px, 0, 12px, 0)
+      +offset(0, 0, 0, 8px)
+      +display-flex
+      +flex-direction(row)
+      +align-items(center)
+      +cornerRadius(6px)
+      +clipToBounds
+      +shadowCell
+      +cursorDefault
+      +noUserSelect
+      position: relative
+      box-sizing: border-box
+      background-color: $colorBackgroundPrimary
+
+      &:last-of-type
+        +offset(0, 0, 0, 0)
+
+      .title
+        +fontSubheadEmphasized
+        color: $colorTitle
+      .subtitle
+        +fontFootnote
+        color: $colorSubtitle

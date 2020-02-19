@@ -1,0 +1,72 @@
+.segmentedBar
+  +size(auto, 32px)
+  +display-flex
+  +flex-direction(row)
+  +align-items(center)
+  +cornerRadius(5px)
+  z-index: 2
+  background-color: $colorActionTranslucent
+
+  .separator
+    +size(2px, 24px)
+    +shadowNone
+    position: static
+    background-color: $colorActionTranslucent
+
+  .segment
+    +size(94px, 100%)
+    +cornerRadius(5px)
+    +display-flex
+    +align-items(center)
+    +justify-content(center)
+    +cursorAction
+    +interactionTransition
+    z-index: 4
+
+    .title
+      +cursorAction
+      +fontFootnoteEmphasized
+      color: $colorAction
+
+    &:hover
+      background-color: $colorActionTranslucent
+    &:active
+      +interactionTapScale
+
+    &.selected
+      &:hover
+        +interactionNone
+      &:active
+        +interactionTapScale
+      .title
+        color: $colorTitleSecondary
+
+  .selection
+    +size(94px, 100%)
+    +cornerRadius(5px)
+    +cursorAction
+    +interactionTransition
+    +positionAbsoluteWithOffset(0, 0, auto, auto)
+    +shadowSmallTint
+    z-index: 3
+    background-color: $colorTint
+
+    &:active
+      +interactionTapScale
+
+  &.index0
+    .selection
+      left: 0
+    .separator1
+      opacity: 0
+  &.index1
+    .selection
+      left: 96px
+    .separator1, .separator2
+      opacity: 0
+  &.index2
+    .selection
+      left: 192px
+    .separator2
+      opacity: 0
+

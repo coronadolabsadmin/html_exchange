@@ -1,0 +1,21 @@
+.navBar
+  +size(100%, 64px)
+  +positionStickyWithOffset(0, 0, auto, auto)
+  +contentEdgeInsets(24px, 0, 24px, 0)
+  +display-flex
+  +flex-direction(row)
+  +align-items(center)
+  box-sizing: border-box
+  background-color: $colorBackgroundSecondary
+  z-index: 1
+
+  .separator
+    +positionAbsoluteWithOffset(24px, 0, 24px, 0)
+    +shadowSeparator
+    z-index: -1
+
+  .title
+    +cursorDefault
+    +noUserSelect
+    +fontTitle2Emphasized
+    color: $colorTitle
