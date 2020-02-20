@@ -1,0 +1,57 @@
+.chatCell
+  +size(100%, auto)
+  +display-flex
+  +flex-direction(row)
+  +contentEdgeInsets(16px, 14px, 16px, 14px)
+  box-sizing: border-box
+
+  .profilePicture
+    +size(36px, 36px)
+
+  .chatDetails
+    +display-flex
+    +flex-direction(column)
+
+    .clientDetails
+      +display-flex
+      +flex-direction(row)
+      +justify-content(space-between)
+
+      .clientName
+        +fontFootnoteEmphasized
+        color: $colorTitle
+
+      .timestamp
+        +fontCaption1
+        color: $colorSubtitle
+
+    .patientDetails
+      +display-flex
+      +flex-direction(row)
+
+      .patientName
+        +fontFootnoteEmphasized
+        color: $colorSubtitle
+
+      .patientBreed
+        +offset(6px, 0, 0, 0)
+        +fontFootnote
+        color: $colorSubtitle
+
+
+    .attributes
+      +display-flex
+      +flex-direction(row)
+      +size(100%, 20px)
+
+      .priority
+        +size(100%, 100%)
+        +fontCaption2Emphasized
+
+      .unreadBadge
+        +size(100%, 100%)
+        +fontCaption2Emphasized
+
+      .followUpBadge
+        +size(100%, 100%)
+        +fontCaption2Emphasized

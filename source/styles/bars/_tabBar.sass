@@ -17,14 +17,14 @@
     .logo
       +iconTabBarLogo
 
-  .navigationItems
+  .navigationSection
     +size(100%, auto)
     +contentEdgeInsets(12px, 12px, 12px, 12px)
     +noUserSelect
     +cursorDefault
     box-sizing: border-box
     
-    .item
+    .navigationItem
       +size(100%, 40px)
       +display-flex
       +flex-direction(row)
@@ -87,13 +87,6 @@
           .icon
             +iconTabBarClientsSelected
 
-      &.patients
-        .icon
-          +iconTabBarPatients
-        &.selected
-          .icon
-            +iconTabBarPatientsSelected
-
       &.services
         .icon
           +iconTabBarServices
@@ -107,3 +100,37 @@
         &.selected
           .icon
             +iconTabBarSettingsSelected
+
+  .customerDetails
+    +size(100%, 56px)
+    +positionAbsoluteWithOffset(auto, auto, auto, 0)
+    +offset(10px, 0, 10px, 12px)
+    +contentEdgeInsets(10px, 10px, 10px, 10px)
+    +display-flex
+    +flex-flow(row)
+    +align-items(center)
+    +clipToBounds
+    +cornerRadius(7px)
+    +cursorAction
+    +noUserSelect
+    +interactionTransition
+    box-sizing: border-box
+    background-color: $colorActionTranslucentCell
+
+    .profilePicture
+      +size(36px, 36px)
+
+    .details
+      +offset(6px, 0, 0, 0)
+      .fullName
+        +fontSubheadEmphasized
+        color: $colorTitle
+      .clinicName
+        +fontFootnote
+        color: $colorSubtitle
+
+    &:hover
+      background-color: $colorActionTranslucent
+
+    &:active
+      +interactionTapScale
