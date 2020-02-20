@@ -6,20 +6,20 @@
   +flex-direction(column)
   +flex-shrink(0)
   z-index: 10
-  background-color: $colorBackgroundPrimary
+  background-color: $colorBackgroundDark
   
   .header
     +size(100%, 62px)
     +display-flex
     +align-items(center)
     +justify-content(center)
-    +shadowSeparator
+    +shadowSeparatorOnDark
     .logo
       +iconTabBarLogo
 
   .navigationSection
     +size(100%, auto)
-    +contentEdgeInsets(12px, 12px, 12px, 12px)
+    +contentEdgeInsets(12px, 12px, 12px, 8px)
     +noUserSelect
     +cursorDefault
     box-sizing: border-box
@@ -101,36 +101,72 @@
           .icon
             +iconTabBarSettingsSelected
 
-  .customerDetails
-    +size(100%, 56px)
-    +positionAbsoluteWithOffset(auto, auto, auto, 0)
-    +offset(10px, 0, 10px, 12px)
-    +contentEdgeInsets(10px, 10px, 10px, 10px)
+  .bottomActions
+    +size(100%, auto)
     +display-flex
-    +flex-flow(row)
-    +align-items(center)
-    +clipToBounds
-    +cornerRadius(7px)
-    +cursorAction
+    +flex-direction(column)
+    +contentEdgeInsets(12px, 12px, 12px, 12px)
+    +positionAbsoluteWithOffset(auto, auto, 0, 0)
     +noUserSelect
-    +interactionTransition
+    +cursorDefault
     box-sizing: border-box
-    background-color: $colorActionTranslucentCell
 
-    .profilePicture
-      +size(36px, 36px)
+    .customerDetails
+      +size(100%, 56px)
+      +contentEdgeInsets(10px, 10px, 10px, 10px)
+      +display-flex
+      +flex-flow(row)
+      +align-items(center)
+      +flex-shrink(1)
+      +clipToBounds
+      +cornerRadius(7px)
+      +cursorAction
+      +noUserSelect
+      +interactionTransition
+      box-sizing: border-box
+      background-color: $colorActionTranslucentCell
 
-    .details
-      +offset(6px, 0, 0, 0)
-      .fullName
-        +fontSubheadEmphasized
-        color: $colorTitle
-      .clinicName
-        +fontFootnote
-        color: $colorSubtitle
+      .profilePicture
+        +size(36px, 36px)
+        +cornerRadius(50%)
+        +clipToBounds
+        background-color: $colorBackgroundPlaceholder
 
-    &:hover
-      background-color: $colorActionTranslucent
+      .details
+        +offset(6px, 0, 0, 0)
+        .fullName
+          +fontSubheadEmphasized
+          color: $colorTitleSecondary
+        .clinicName
+          +fontFootnote
+          color: $colorTitleSecondary
+          opacity: 0.60
 
-    &:active
-      +interactionTapScale
+      &:hover
+        background-color: $colorActionTranslucent
+      
+      &:active
+        +interactionTapScale
+
+  &.compact
+    +size(64px, 100vh)
+    .header
+      +size(100%, 62px)
+      .logo
+        +iconTabBarLogoCompact
+
+    .navigationItem
+      +justify-content(center)
+      .title
+        display: none
+        +offset(0, 0, 0, 0)
+
+    .bottomActions
+      +size(100%, auto)
+      +contentEdgeInsets(0, 0, 0, 0)
+
+      .customerDetails
+        +justify-content(center)
+        background-color: $colorClear
+        .details
+          display: none
