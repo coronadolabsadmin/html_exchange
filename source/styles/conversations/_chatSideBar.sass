@@ -1,5 +1,93 @@
 .chatSideBar
   +size(256px, 100%)
+  +offset(16px, 0, 0, 0)
+  +contentEdgeInsets(16px, 0, 16px, 0)
   +display-flex
   +flex-direction(column)
+  +flex-shrink(0)
+  +cornerRadius(12px)
+  +shadowSmall
+  position: relative
+  box-sizing: border-box
   background-color: $colorBackgroundPrimary
+
+  .segmentedBar
+    +positionAbsoluteWithOffset(8px, auto, 8px, 8px)
+
+  .sideBarSection
+    +size(100%, auto)
+
+    .sectionTitle
+      +offset(0, 12px, 0, 8px)
+      +fontFootnoteEmphasized
+      color: $colorHeading
+
+    .attributeCell
+      +size(100%, auto)
+      +display-flex
+      +flex-direction(row)
+      min-height: 48px
+      .icon
+        +size(28px, 28px)
+
+      .cellBody
+        +offset(12px, 0, 0, 0)
+        .title
+          +fontCaption1
+          color: $colorSubtitle
+        .detail
+          +fontFootnoteEmphasized
+          color: $colorTitle
+
+    .separator
+      +size(100%, 8px)
+      +shadowSeparator
+
+.chatSideBar
+  .sideBarSection
+    &.sectionClient
+      .clientDetails
+        +contentEdgeInsets(0, 16px, 0, 16px)
+        +display-flex
+        +flex-direction(row)
+        +justify-content(space-between)
+        box-sizing: border-box
+
+        .details
+          .fullName
+            +fontSubheadEmphasized
+            color: $colorTitle
+          .location
+            +fontFootnote
+            color: $colorSubtitle
+
+        .profilePicture
+          +size(40px, 40px)
+          +cornerRadius(50%)
+          background-color: $colorBackgroundPlaceholder
+
+      .servicePlan
+        +size(100%, 56px)
+        +contentEdgeInsets(10px, 0, 10px, 0)
+        +display-flex
+        +flex-direction(row)
+        +align-items(center)
+        +cornerRadius(8px)
+        box-sizing: border-box
+        background-color: $colorActionTranslucentCell
+
+        .icon
+          +size(24px, 24px)
+
+        .serviceDetails
+          .title
+            +fontFootnoteEmphasized
+            color: $colorAction
+          .detail
+            +fontFootnote
+            color: $colorSubtitle
+
+      .separator
+        +size(100%, 16px)
+
+    
