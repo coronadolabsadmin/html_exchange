@@ -4,12 +4,32 @@
     +display-flex
     +flex-shrink(0)
     +flex-direction(column)
+    +shadowChatsList
+    z-index: 2
     background-color: $colorBackgroundPrimary
 
   .navBar
     background-color: $colorBackgroundPrimary
 
   .chatsSection
+    +size(100%, auto)
+    +display-flex
+    +flex-direction(column)
+    position: relative
+
     .sectionTitle
-      +fontFootnoteEmphasized
-      color: $colorHeading
+      +size(100%, auto)
+      +contentEdgeInsets(16px, 12px, 16px, 2px)
+      box-sizing: border-box
+      .title
+        +size(100%, auto)
+        +fontFootnoteEmphasized
+        color: $colorHeading
+
+    .sectionSeparator
+      +size(100%, 8px)
+      +contentEdgeInsets(16px, 0, 16px, 0)
+      box-sizing: border-box
+      .separator
+        +size(100%, 100%)
+        +shadowSeparator

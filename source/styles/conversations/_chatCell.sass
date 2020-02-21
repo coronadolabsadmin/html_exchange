@@ -1,16 +1,27 @@
 .chatCell
   +size(100%, auto)
+  +contentEdgeInsets(16px, 14px, 16px, 14px)
   +display-flex
   +flex-direction(row)
-  +contentEdgeInsets(16px, 14px, 16px, 14px)
+  +noUserSelect
+  +cursorAction
+  +interactionTransition
+  position: relative
+  z-index: 1
   box-sizing: border-box
 
   .profilePicture
     +size(36px, 36px)
+    +flex-shrink(0)
+    +clipToBounds
+    +cornerRadius(50%)
+    background-color: $colorBackgroundPlaceholder
 
   .chatDetails
+    +size(100%, auto)
     +display-flex
     +flex-direction(column)
+    +offset(10px, 0, 0, 0)
 
     .clientDetails
       +display-flex
@@ -22,6 +33,7 @@
         color: $colorTitle
 
       .timestamp
+        +offset(0, 2px, 0, 0)
         +fontCaption1
         color: $colorSubtitle
 
@@ -38,20 +50,115 @@
         +fontFootnote
         color: $colorSubtitle
 
-
     .attributes
-      +display-flex
-      +flex-direction(row)
       +size(100%, 20px)
+      +display-flex
+      +justify-content(space-between)
+      +flex-direction(row)
+      +offset(0, 10px, 0, 0)
 
-      .priority
-        +size(100%, 100%)
+      .attributeItem
+        +size(auto, 100%)
+        +contentEdgeInsets(8px, 0, 8px, 0)
+        +display-flex
+        +align-items(center)
+        +cornerRadius(10px)
         +fontCaption2Emphasized
+        background-color: $colorActionTranslucent
 
-      .unreadBadge
-        +size(100%, 100%)
-        +fontCaption2Emphasized
+        &.priority
+          +fontCaption2Emphasized
 
-      .followUpBadge
-        +size(100%, 100%)
-        +fontCaption2Emphasized
+          &.none
+            color: $colorPriorityNone
+            background-color: $colorPriorityNoneTranslucent
+          &.low
+            color: $colorPriorityLow
+            background-color: $colorPriorityLowTranslucent
+          &.medium
+            color: $colorPriorityMedium
+            background-color: $colorPriorityMediumTranslucent
+          &.high
+            color: $colorPriorityHigh
+            background-color: $colorPriorityHighTranslucent
+
+        &.unreadBadge
+          +contentEdgeInsets(5px, 0, 8px, 0)
+          background-color: $colorAction
+          .icon
+            +iconConversationChatCellUnread
+          .count
+            +offset(4px, 0, 0, 0)
+            color: $colorTitleSecondary
+
+        &.followUpBadge
+          +contentEdgeInsets(6px, 0, 8px, 0)
+          background-color: $colorAction
+          .icon
+            +iconConversationChatCellFollowUp
+          .title
+            +offset(4px, 0, 0, 0)
+            color: $colorTitleSecondary
+
+  .background
+    +positionAbsoluteWithOffset(8px, 4px, 8px, 4px)
+    +cornerRadius(10px)
+    +interactionTransition
+    z-index: -1
+
+  &:hover
+    .background
+      background-color: $colorActionTranslucentCell
+
+  &:active
+    +interactionTapScale
+
+  &.selected
+    .chatDetails
+      .clientDetails
+        .clientName
+          color: $colorTitleSecondary
+        .timestamp
+          color: $colorTitleSecondary
+          opacity: 0.6
+      
+      .patientDetails
+        .patientName
+          color: $colorTitleSecondary
+        .patientBreed
+          color: $colorTitleSecondary
+          opacity: 0.8
+      
+      .attributes
+        .attributeItem
+          &.priority
+            opacity: 0.8
+
+            &.none
+              background-color: $colorPriorityNone
+              color: $colorBackgroundPrimary
+            &.low
+              background-color: $colorPriorityLow
+              color: $colorBackgroundPrimary
+            &.medium
+              background-color: $colorPriorityMedium
+              color: $colorBackgroundPrimary
+            &.high
+              background-color: $colorPriorityHigh
+              color: $colorBackgroundPrimary
+          
+          &.unreadBadge
+            background-color: $colorBackgroundPrimary
+            .icon
+              +iconConversationChatCellUnreadSelected
+            .count
+              color: $colorAction
+          
+          &.followUpBadge
+            background-color: $colorBackgroundPrimary
+            .icon
+              +iconConversationChatCellFollowUpSelected
+
+    .background
+      background-color: $colorAction
+      box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16)
