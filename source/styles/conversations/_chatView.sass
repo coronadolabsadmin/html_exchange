@@ -2,6 +2,8 @@
   +size(100%, 100%)
   +display-flex
   +flex-direction(column)
+  +noUserSelect
+  +cursorDefault
 
   .navBar
     background-color: $colorBackgroundSecondary
@@ -17,5 +19,11 @@
     +size(100%, 100%)
     +display-flex
     +flex-direction(row)
-    +contentEdgeInsets(16px, 16px, 16px, 16px)
+    box-sizing: border-box
+
+  .chatContext
+    +size(auto, 100%)
+    +contentEdgeInsets(0, 16px, 16px, 16px)
+    +display-flex
+    +flex-shrink(0)
     box-sizing: border-box

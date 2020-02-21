@@ -1,22 +1,22 @@
 .segmentedBar
-  +size(auto, 32px)
+  +size(auto, 28px)
   +display-flex
   +flex-direction(row)
   +align-items(center)
-  +cornerRadius(5px)
+  +cornerRadius(8px)
   position: relative
   z-index: 2
   background-color: $colorActionTranslucent
 
   .separator
-    +size(2px, 24px)
+    +size(2px, 16px)
     +shadowNone
     position: static
     background-color: $colorActionTranslucent
 
   .segment
     +size(94px, 100%)
-    +cornerRadius(5px)
+    +cornerRadius(8px)
     +display-flex
     +align-items(center)
     +justify-content(center)
@@ -43,14 +43,14 @@
         color: $colorTitleSecondary
 
   .selection
-    +size(94px, 100%)
-    +cornerRadius(5px)
+    +size(78px, 100%)
+    +cornerRadius(8px)
     +cursorAction
     +interactionTransition
     +positionAbsoluteWithOffset(0, 0, auto, auto)
     +shadowSmall
     z-index: 3
-    background-color: $colorTint
+    background-color: $colorAction
 
     &:active
       +interactionTapScale
@@ -62,12 +62,12 @@
       opacity: 0
   &.index1
     .selection
-      left: 96px
+      left: 80px
     .separator1, .separator2
       opacity: 0
   &.index2
     .selection
-      left: 192px
+      left: 162px
     .separator2
       opacity: 0
 

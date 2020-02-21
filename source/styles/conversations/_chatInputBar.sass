@@ -1,4 +1,5 @@
 .chatInputBar
+  +positionAbsoluteWithOffset(0, auto, 0, 0)
   +contentEdgeInsets(16px, 16px, 16px, 16px)
   box-sizing: border-box
 
@@ -28,8 +29,35 @@
       +flex-direction(row)
       +align-items(center)
       +cornerRadius(14px)
+      +cursorAction
+      +interactionTransition
       background-color: $colorActionTranslucent
 
       .title
+        +offset(8px, 0, 0, 0)
         +fontFootnoteEmphasized
         color: $colorAction
+
+      &.videoCall
+        .icon
+          +iconConversationChatInputActionVideo
+
+      &.addAttachment
+        .icon
+          +iconConversationChatInputActionAttachment
+
+      &:hover
+        background-color: $colorAction
+        +shadowSmall
+        .title
+          color: $colorTitleSecondary
+        &.videoCall
+          .icon
+            +iconConversationChatInputActionVideoSelected
+        &.addAttachment
+          .icon
+            +iconConversationChatInputActionAttachmentSelected
+
+
+      &:active
+        +interactionTapScale

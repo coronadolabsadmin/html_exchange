@@ -1,7 +1,5 @@
 .chatSideBar
-  +size(256px, 100%)
-  +offset(16px, 0, 0, 0)
-  +contentEdgeInsets(16px, 0, 16px, 0)
+  +size(256px, 555px)
   +display-flex
   +flex-direction(column)
   +flex-shrink(0)
@@ -10,28 +8,49 @@
   position: relative
   box-sizing: border-box
   background-color: $colorBackgroundPrimary
+  &:after
+    +size(100%, 44px)
+    content: ''
 
   .segmentedBar
     +positionAbsoluteWithOffset(8px, auto, 8px, 8px)
+
+  .sideBarContent
+    +size(100%, 100%)
+    +contentEdgeInsets(8px, 0, 8px, 0)
+    box-sizing: border-box
+    overflow-y: scroll
 
   .sideBarSection
     +size(100%, auto)
 
     .sectionTitle
       +offset(0, 12px, 0, 8px)
+      +contentEdgeInsets(8px, 0, 8px, 0)
       +fontFootnoteEmphasized
+      box-sizing: border-box
       color: $colorHeading
 
     .attributeCell
       +size(100%, auto)
+      +contentEdgeInsets(8px, 0, 8px, 0)
       +display-flex
       +flex-direction(row)
+      +align-items(center)
+      +cornerRadius(8px)
+      +cursorAction
+      +interactionTransition
+      box-sizing: border-box
       min-height: 48px
+      background-color: $colorClear
+
       .icon
         +size(28px, 28px)
+        +flex-shrink(0)
 
       .cellBody
-        +offset(12px, 0, 0, 0)
+        +size(100%, auto)
+        +offset(12px, 2px, 8px, 0)
         .title
           +fontCaption1
           color: $colorSubtitle
@@ -39,13 +58,32 @@
           +fontFootnoteEmphasized
           color: $colorTitle
 
-    .separator
+      .accessory
+        +flex-shrink(0)
+        &.popUpIndicator
+          +iconTableViewCellAccessoryPopUp
+        &.disclosureIndicator
+          +iconTableViewCellAccessoryDisclosureIndicator
+
+      &:hover
+        background-color: $colorActionTranslucentCell
+
+      &:active
+        +interactionTapScale
+
+    .sectionSeparator
       +size(100%, 8px)
-      +shadowSeparator
+      +contentEdgeInsets(8px, 0, 8px, 0)
+      box-sizing: border-box
+      .separator
+        +size(100%, 100%)
+        +shadowSeparator
 
 .chatSideBar
   .sideBarSection
     &.sectionClient
+      +contentEdgeInsets(8px, 0, 8px, 0)
+      box-sizing: border-box
       .clientDetails
         +contentEdgeInsets(0, 16px, 0, 16px)
         +display-flex
@@ -77,9 +115,11 @@
         background-color: $colorActionTranslucentCell
 
         .icon
-          +size(24px, 24px)
+          +iconServiceWellnessPlan
 
         .serviceDetails
+          +offset(10px, 0, 0, 0)
+
           .title
             +fontFootnoteEmphasized
             color: $colorAction
@@ -87,7 +127,43 @@
             +fontFootnote
             color: $colorSubtitle
 
-      .separator
+      .sectionSeparator
+        +contentEdgeInsets(0, 0, 0, 0)
         +size(100%, 16px)
+
+  .sideBarContent
+    .sideBarSection
+      .attributeCell
+        &.animal
+          .icon
+            +iconConversationContextDetailsPatientTypeDog
+        &.symptoms
+          .icon
+            +iconConversationContextDetailsPatientSymptoms
+        &.status
+          .icon
+            +iconConversationContextDetailsConsultationStatus
+        &.suspectedDiagnosis
+          .icon
+            +iconConversationContextDetailsConsultationSuspectedDiagnosis
+        &.priority
+          &.none
+            .icon
+              +iconConversationContextDetailsConsultationPriorityNone
+          &.low
+            .icon
+              +iconConversationContextDetailsConsultationPriorityLow
+          &.medium
+            .icon
+              +iconConversationContextDetailsConsultationPriorityMedium
+          &.high
+            .icon
+              +iconConversationContextDetailsConsultationPriorityHigh
+        &.opened
+          .icon
+            +iconConversationContextDetailsConsultationOpened
+        &.followUpReminder
+          .icon
+            +iconConversationContextDetailsConsultationReminderEmpty
 
     

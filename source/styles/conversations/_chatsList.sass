@@ -1,20 +1,24 @@
 .conversationsView
   .chatsList
-    +size(272px, 100%)
+    +size(272px, 100vh)
     +display-flex
     +flex-shrink(0)
     +flex-direction(column)
     +shadowChatsList
     z-index: 2
+    overflow-y: scroll
     background-color: $colorBackgroundPrimary
 
   .navBar
+    +flex-shrink(0)
+    z-index: 4
     background-color: $colorBackgroundPrimary
 
   .chatsSection
     +size(100%, auto)
     +display-flex
     +flex-direction(column)
+    +flex-shrink(0)
     position: relative
 
     .sectionTitle
