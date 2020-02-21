@@ -1,0 +1,66 @@
+.chatMessages
+  .messageCell
+    +size(100%, auto)
+    +display-flex
+    +flex-direction(row)
+    +offset(0, 0, 0, 16px)
+    
+    .profilePicture
+      +size(36px, 36px)
+      +cornerRadius(50%)
+      +offset(0, 2px, 10px, 0)
+      +flex-shrink(0)
+      background-color: $colorBackgroundPlaceholder
+
+    .messageBubble
+      +size(100%, auto)
+      +cornerRadius(12px)
+      +contentEdgeInsets(12px, 10px, 12px, 12px)
+      +clipToBounds
+      +shadowSmall
+      box-sizing: border-box
+      max-width: 306px
+      background-color: $colorBackgroundPrimary
+      
+      .attributes
+        +display-flex
+        +flex-direction(row)
+        +justify-content(space-between)
+        +offset(0, 0, 0, 2px)
+        .timestamp
+          +fontCaption1
+          color: $colorSubtitle
+        .source
+          +fontCaption1Emphasized
+          color: $colorSubtitle
+
+      .text
+        +fontFootnote
+        color: $colorTitle
+
+    &.business
+      +justify-content(flex-end)
+
+      .messageBubble
+        background-color: $colorBackgroundDark
+        .text
+          color: $colorTitleSecondary
+
+    &.bot
+      +flex-direction(column)
+      +align-items(center)
+
+      .profilePicture
+        +offset(0, 0, 0, -16px)
+        background-color: $colorTint
+        z-index: 2
+
+      .messageBubble
+        +size(100%, auto)
+        +shadowNone
+        max-width: 400px
+        background-color: $colorActionTranslucent
+
+
+
+
