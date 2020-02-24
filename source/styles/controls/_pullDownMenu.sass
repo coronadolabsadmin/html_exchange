@@ -1,0 +1,40 @@
+.pullDownMenu
+  +size(calc(100% - 16px), auto)
+  +contentEdgeInsets(4px, 4px, 4px, 4px)
+  +positionAbsoluteWithOffset(50%, 378px, auto, auto)
+  +shadowPopover
+  +cornerRadius(8px)
+  +noUserSelect
+  +cursorDefault
+  +transform(translate(-50%, 0))
+  box-sizing: border-box
+  z-index: 100
+  background-color: $colorBackgroundPrimary
+
+  .cell
+    +size(100%, 32px)
+    +contentEdgeInsets(8px, 0, 8px, 0)
+    +display-flex
+    +flex-direction(row)
+    +align-items(center)
+    +cornerRadius(6px)
+    +cursorAction
+    +interactionTransition
+    background-color: $colorClear
+    box-sizing: border-box
+
+    .title
+      +offset(0, 0, 0, 0)
+      +fontSubhead2Emphasized
+      color: $colorTitle
+
+    &:hover
+      background-color: $colorActionTranslucentCell
+
+    &:active
+      +interactionTapScale
+
+    &.selected
+      background-color: $colorAction
+      .title
+        color: $colorTitleSecondary
